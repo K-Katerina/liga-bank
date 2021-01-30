@@ -1,0 +1,25 @@
+@import "../../scss/colors";
+
+.date {
+  display: block;
+  position: relative;
+  font-size: 24px;
+  line-height: 33px;
+  font-weight: 400;
+  color: black;
+  background-color: transparent;
+  border-radius: 4px;
+
+  width: 100%;
+  padding: 15px;
+  border: 1px $color-service solid;
+
+  &--error {
+    border-color: $color-error;
+  }
+}
+
+.date:hover .input__text,
+.date:focus .input__text {
+  border-color: $color-main;
+}

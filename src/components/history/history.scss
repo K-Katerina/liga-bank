@@ -1,0 +1,27 @@
+@import "../../scss/colors";
+
+.history {
+  padding: 10px 30px;
+}
+
+.history__list {
+  font-size: 17px;
+  line-height: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.history__item {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  padding: 15px 60px;
+  align-items: baseline;
+}
+
+.history__log {
+  padding: 10px;
+}

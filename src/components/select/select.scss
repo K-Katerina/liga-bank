@@ -1,0 +1,26 @@
+@import "../../scss/colors";
+
+.select {
+  display: block;
+  text-transform: uppercase;
+  position: relative;
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 400;
+  color: $color-service;
+  background-color: transparent;
+  border-radius: 4px;
+
+  width: 100%;
+  padding: 9px 18px;
+  border: 1px $color-service solid;
+  cursor: pointer;
+
+  &:hover {
+    color: #323232;
+  }
+}
+
+.select option {
+  color: $color-service;
+}
