@@ -1,19 +1,20 @@
 import React from 'react';
-import {ReactComponent as LogoImg} from '../logo/logo.svg';
-import {ReactComponent as LogoImgText} from '../logo/logo-text.svg';
 import PropTypes from 'prop-types';
+import {ReactComponent as LogoImg} from './logo.svg';
+import {ReactComponent as LogoImgText} from './logo-text.svg';
 import './logo.scss';
 
-const Logo = ({wImg= '28', wTxt= '112'}) => {
+const Logo = ({className}) => {
     return (
-        <div className="logo">
-            <LogoImg className="logo__img" width={wImg}/>
-            <LogoImgText className="logo__txt" width={wTxt}/>
+        <div className={`${className} logo`}>
+            <LogoImg className="logo__img"/>
+            <LogoImgText className="logo__txt"/>
         </div>
     );
 };
 
 Logo.propTypes = {
+    className: PropTypes.string,
     wImg: PropTypes.string,
     wTxt: PropTypes.string
 };

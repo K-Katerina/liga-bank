@@ -4,7 +4,7 @@ import './input.scss';
 
 const Input = (props) => {
     return (
-        <label className="input">
+        <label className={`${props.className} input`}>
             <span className="input__label">
               {props.label}
             </span>
@@ -14,6 +14,7 @@ const Input = (props) => {
 };
 
 Input.propTypes = {
+    className: PropTypes.string,
     label: PropTypes.string
 };
 

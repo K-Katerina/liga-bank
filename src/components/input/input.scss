@@ -1,27 +1,33 @@
 @import "../../scss/colors";
 
 .input {
-  display: block;
+  display: inline-block;
   position: relative;
+  margin-right: 15px;
 }
 
 .input__label {
-  font-size: 17px;
-  line-height: 18px;
-  font-weight: 700;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 500;
   color: $color-service;
+  display: block;
+  padding-bottom: 22px;
 }
 
 .input__text {
   font-size: 24px;
-  line-height: 33px;
+  line-height: 28px;
   font-weight: 500;
   color: black;
   background-color: transparent;
   border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
 
-  width: 100%;
-  padding: 15px;
+  width: 390px;
+  padding: 15px 15px 15px 26px;
   border: 1px $color-service solid;
 
   &--error {

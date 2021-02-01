@@ -1,35 +1,41 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import './menu.scss';
 
-const Menu = () => {
+const Menu = ({className}) => {
     return (
-        <div className="main-nav__site site-nav main-nav__group">
-            <span className="site-nav__text">
-                <a href="/" className="site-nav__link">
+        <div className={`${className} menu`}>
+            <span className="menu__item">
+                <a href="/" className="menu__link">
                     Услуги
                 </a>
             </span>
-            <span className="site-nav__text">
-                <a href="/" className="site-nav__link">
+            <span className="menu__item">
+                <a href="/" className="menu__link">
                    Рассчитать кредит
                 </a>
             </span>
-            <span className="site-nav__text site-nav__text--active">
-                <a href="/" className="site-nav__link">
+            <span className="menu__item">
+                <a href="/" className="menu__link menu__link--active">
                     Конвертер валют
                 </a>
             </span>
-            <span className="site-nav__text">
-                <a href="/" className="site-nav__link">
+            <span className="menu__item">
+                <a href="/" className="menu__link">
                     Контакты
                 </a>
             </span>
-            <span className="site-nav__text">
-                <a href="/" className="site-nav__link">
+            <span className="menu__item">
+                <a href="/" className="menu__link">
                     Задать вопрос
                 </a>
             </span>
         </div>
     );
+};
+
+Menu.propTypes = {
+    className: PropTypes.string
 };
 
 export {Menu};

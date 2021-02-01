@@ -1,0 +1,30 @@
+@import "../../scss/colors";
+
+.menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  max-width: 735px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.menu__item {
+  padding: 10px 12.5px;
+}
+
+.menu__link {
+  text-decoration: none;
+  color: $color-service;
+
+  &--active {
+    color: $color-main;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+}

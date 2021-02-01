@@ -1,7 +1,7 @@
 @import "../../scss/colors";
 
 .select {
-  display: block;
+  display: inline-block;
   text-transform: uppercase;
   position: relative;
   font-size: 30px;
@@ -11,13 +11,14 @@
   background-color: transparent;
   border-radius: 4px;
 
-  width: 100%;
-  padding: 9px 18px;
+  width: 120px;
+  padding: 10.5px;
   border: 1px $color-service solid;
   cursor: pointer;
 
-  &:hover {
-    color: #323232;
+  &:hover,
+  &:focus {
+    border-color: $color-main;
   }
 }
 

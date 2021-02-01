@@ -14,19 +14,22 @@ const History = () => {
     };
 
     return (
-        <section className='history'>
-            <h3>История конвертация</h3>
-            <ul className='history__list'>
-                {history.map((log, i) =>
-                    <li key={log + i} className='history__item'>
-                        <span className='history__log'>{log.data}</span>
-                        <span>{log.source}</span>
-                        <Arrow/>
-                        <span>{log.target}</span>
-                    </li>
-                )}
-            </ul>
-            <Button onClick={() => onClickClearButton()} nameButton={'Очистить историю'}/>
+        <section className="history">
+            <h3 className="history__title">История конвертации</h3>
+            {history && history.length ?
+                <ul className="history__list">
+                    {history.map((log, i) =>
+                        <li key={log + i} className="history__item">
+                            <span className="history__data">{log.data}</span>
+                            <span className="history__source">{log.source}</span>
+                            <Arrow/>
+                            <span className="history__target">{log.target}</span>
+                        </li>
+                    )}
+                </ul>
+                : <p className="history__help">Для того, чтобы добавить историю конвертации, нажмите кнопку выше &mdash; &quot;Сохранить результат&quot;</p>
+            }
+            <Button className="history__button button--small" onClick={() => onClickClearButton()} nameButton={'Очистить историю'}/>
         </section>
     );
 };

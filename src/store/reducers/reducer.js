@@ -4,7 +4,7 @@ import {getCurrency} from '../../utils';
 
 const initialState = {
     selectedDate: moment().format('YYYY-MM-DD'),
-    sourceCurrency: 0,
+    sourceCurrency: 1000,
     targetCurrency: 0,
     sourceBase: Object.keys(CurrencySymbols)[0],
     targetBase: Object.keys(CurrencySymbols)[1],

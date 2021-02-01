@@ -7,14 +7,19 @@
   line-height: 25px;
   font-weight: 500;
 
-  text-decoration: none;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  padding: 10px 30px;
+  padding: 18px 102px;
+
+  &--small {
+    padding: 17px 28px;
+    font-size: 16px;
+    line-height: 18px;
+  }
 
   &:hover,
   &:focus {
@@ -25,8 +30,4 @@
   &:active {
     color: $color-service--light;
   }
-}
-
-.button--header {
-
 }

@@ -1,27 +1,75 @@
 @import "../../scss/colors";
 
 .history {
-  padding: 10px 30px;
+  background-color: $color-service--lightest;
+  padding: 43px 70px;
+  border-radius: 4px;
 }
 
 .history__list {
-  font-size: 17px;
-  line-height: 20px;
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: 400;
   list-style: none;
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
+  padding-bottom: 47px;
+  position: relative;
+  justify-content: flex-start;
 }
 
 .history__item {
   position: relative;
-  display: flex;
   flex-grow: 1;
-  padding: 15px 60px;
+  padding: 12.5px 60px 12.5px 0;
   align-items: baseline;
+  max-width: 50%;
+
+  &:nth-child(2n) {
+    text-align: right;
+    padding-right: 0;
+    padding-left: 60px;
+  }
+
+  &:nth-child(2n + 1) {
+    &::after {
+      content: "";
+      position: absolute;
+      display: block;
+      background-color: $color-service--lighten;
+      box-shadow: 0px 0px 4px $color-service--light;
+      width: 1px;
+      right: 0;
+      top: 0;
+      bottom: 0;
+    }
+  }
+
+  &:only-child {
+    &::after {
+      display: none;
+    }
+  }
 }
 
-.history__log {
-  padding: 10px;
+.history__title {
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: 500;
+  padding-bottom: 37px;
+}
+
+.history__help {
+  color: $color-service--light;
+  padding: 15px 0 55px;
+}
+
+.history__data {
+  padding-right: 35px;
+}
+
+.history__source,
+.history__target {
+  padding: 7px;
 }

@@ -1,0 +1,23 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 100px;
+}
+
+.form__left,
+.form__right  {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding-bottom: 85px;
+}
+
+.form__center {
+  width: 50px;
+  display: inline-block;
+  align-self: flex-end;
+  padding-bottom: 90px;
+}

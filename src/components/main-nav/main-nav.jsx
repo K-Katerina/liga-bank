@@ -1,23 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Menu} from '../menu/menu';
 import {Logo} from '../logo/logo';
+import {SignIn} from '../sign-in/sign-in';
+import './main-nav.scss';
 
-const MainNav = () => {
+const MainNav = ({className}) => {
     return (
-        <nav className="page-header__nav main-nav">
-            <a href="/" className="main-nav__logo">
-                <Logo/>
-            </a>
-            <Menu/>
-            <div className="main-nav__user user-nav main-nav__group">
-              <span className="user-nav__text">
-                <a href="#" className="user-nav__link user-nav__link--login">
-                  Войти в Интернет-банк
-                </a>
-              </span>
-            </div>
+        <nav className={`${className} main-nav wrapper`}>
+            <Logo className="main-nav__logo"/>
+            <Menu className="main-nav__menu"/>
+            <SignIn className="main-nav__sign-in"/>
         </nav>
     );
+};
+
+MainNav.propTypes = {
+    className: PropTypes.string
 };
 
 export {MainNav};

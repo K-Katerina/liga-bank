@@ -1,13 +1,14 @@
 import React from 'react';
 import {Form} from '../form/form';
 import {History} from '../history/history';
+import './converter.scss';
 
 const Converter = () => {
     return (
-        <main>
-            <h2>Конвертер валют</h2>
-            <Form/>
-            <History/>
+        <main className="converter wrapper">
+            <h2 className="converter__title">Конвертер валют</h2>
+            <Form className="converter__form"/>
+            <History className="converter__history"/>
         </main>
     );
 };
