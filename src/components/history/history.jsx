@@ -1,6 +1,6 @@
 import React from 'react';
-import {Button} from '../button/button';
 import {useDispatch, useSelector} from 'react-redux';
+import {Button} from '../button/button';
 import {clearHistory} from '../../store/actions/actions';
 import {Arrow} from '../arrow/arrow';
 import './history.scss';
@@ -26,10 +26,15 @@ const History = () => {
                             <span className="history__target">{log.target}</span>
                         </li>
                     )}
-                </ul>
-                : <p className="history__help">Для того, чтобы добавить историю конвертации, нажмите кнопку выше &mdash; &quot;Сохранить результат&quot;</p>
+                </ul> :
+                <p className="history__help">
+                    Для того, чтобы добавить историю конвертации, нажмите кнопку
+                    выше &ndash; &quot;Сохранить результат&quot;
+                </p>
             }
-            <Button className="history__button button--small" onClick={() => onClickClearButton()} nameButton={'Очистить историю'}/>
+            <Button className="history__button button--small"
+                    onClick={() => onClickClearButton()}
+                    nameButton={'Очистить историю'}/>
         </section>
     );
 };

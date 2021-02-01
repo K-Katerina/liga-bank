@@ -6,10 +6,10 @@ import './logo.scss';
 
 const Logo = ({className}) => {
     return (
-        <div className={`${className} logo`}>
+        <a href="/" className={`${className} logo`}>
             <LogoImg className="logo__img"/>
             <LogoImgText className="logo__txt"/>
-        </div>
+        </a>
     );
 };
 

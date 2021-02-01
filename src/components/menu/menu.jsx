@@ -15,8 +15,8 @@ const Menu = ({className}) => {
                    Рассчитать кредит
                 </a>
             </span>
-            <span className="menu__item">
-                <a href="/" className="menu__link menu__link--active">
+            <span className="menu__item menu__item--active">
+                <a href="#" className="menu__link menu__link--active">
                     Конвертер валют
                 </a>
             </span>

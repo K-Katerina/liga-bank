@@ -1,9 +1,9 @@
 import React from 'react';
-import {ReactComponent as ArrowImg} from '../arrow/arrow.svg';
 import PropTypes from 'prop-types';
+import {ReactComponent as ArrowImg} from '../arrow/arrow.svg';
 import './arrow.scss';
 
-const Arrow = ({isRotate= false}) => {
+const Arrow = ({isRotate = false}) => {
     return (
         <div className="arrow">
             <ArrowImg className={`arrow__img ${isRotate && 'rotate180'}`}/>

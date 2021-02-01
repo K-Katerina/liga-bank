@@ -6,14 +6,15 @@ import {Select} from '../select/select';
 import {Date} from '../date/date';
 import {fetchData} from '../../store/api-actions';
 import {
-    updateDate, updateHistory,
+    updateDate,
+    updateHistory,
     updateSourceBase,
     updateSourceInput,
     updateTargetBase,
     updateTargetInput
 } from '../../store/actions/actions';
 import {useDispatch, useSelector} from 'react-redux';
-import {CurrencySymbols} from '../../const';
+import {CurrencySymbols, DATE_FORMAT} from '../../const';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 import './form.scss';
@@ -46,13 +47,13 @@ const Form = ({className}) => {
         dispatch(updateTargetBase(evt.target.value));
     };
 
-    const onChangeDate = (evt) => {
-        dispatch(updateDate(evt.target.value));
+    const onChangeDate = (value) => {
+        dispatch(updateDate(value));
     };
 
     const onClickSaveButton = () => {
         dispatch(updateHistory({
-            data: moment(selectedDate).format('DD.MM.YYYY'),
+            data: moment(selectedDate).format(DATE_FORMAT),
             source: `${sourceCurrency} ${sourceBase}`,
             target: `${targetCurrency} ${targetBase}`
         }));
@@ -61,19 +62,35 @@ const Form = ({className}) => {
     return (
         <form className={`${className} form`}>
             <div className="form__left">
-                <Input className="form__source-input" onChange={(evt) => onChangeSourceInput(evt)} value={sourceCurrency} label={'У меня есть'}/>
-                <Select className="form__source-select" onChange={(evt) => onChangeSourceBase(evt)} value={sourceBase} options={Object.keys(CurrencySymbols)}/>
+                <Input className="form__source-input"
+                       onChange={(evt) => onChangeSourceInput(evt)}
+                       value={sourceCurrency}
+                       label={'У меня есть'}/>
+                <Select className="form__source-select"
+                        onChange={(evt) => onChangeSourceBase(evt)}
+                        value={sourceBase}
+                        options={Object.keys(CurrencySymbols)}/>
             </div>
             <div className="form__center">
                 <Arrow isRotate={true}/>
                 <Arrow/>
             </div>
             <div className="form__right">
-                <Input className="form__target-input" onChange={(evt) => onChangeTargetInput(evt)} value={targetCurrency} label={'Хочу приобрести'}/>
-                <Select className="form__target-select" onChange={(evt) => onChangeTargetBase(evt)} value={targetBase} options={Object.keys(CurrencySymbols)}/>
+                <Input className="form__target-input"
+                       onChange={(evt) => onChangeTargetInput(evt)}
+                       value={targetCurrency}
+                       label={'Хочу приобрести'}/>
+                <Select className="form__target-select"
+                        onChange={(evt) => onChangeTargetBase(evt)}
+                        value={targetBase}
+                        options={Object.keys(CurrencySymbols)}/>
             </div>
-            <Date className="form__date" onChange={(evt) => onChangeDate(evt)} value={selectedDate}/>
-            <Button className="form__button-save" onClick={() => onClickSaveButton()} nameButton={'Сохранить результат'}/>
+            <Date className="form__date"
+                  onChange={(value) => onChangeDate(value)}
+                  value={selectedDate}/>
+            <Button className="form__button-save"
+                    onClick={() => onClickSaveButton()}
+                    nameButton={'Сохранить результат'}/>
         </form>
     );
 };

@@ -9,6 +9,21 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
+
+  &--column {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    font-weight: 500;
+    max-width: 195px;
+  }
+
+  &--column .menu__item {
+    padding: 5px 14px;
+  }
+
+  &--column .menu__item--active {
+    display: none;
+  }
 }
 
 .menu__item {

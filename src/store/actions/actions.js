@@ -1,42 +1,44 @@
+import {Actions} from '../../const';
+
 export const updateSourceInput = (payload) => ({
-    type: 'UPDATE_SOURCE_INPUT',
+    type: Actions.UPDATE_SOURCE_INPUT,
     payload: payload
 });
 
 export const updateTargetInput = (payload) => ({
-    type: 'UPDATE_TARGET_INPUT',
+    type: Actions.UPDATE_TARGET_INPUT,
     payload: payload
 });
 
 export const updateSourceBase = (payload) => ({
-    type: 'UPDATE_SOURCE_BASE',
+    type: Actions.UPDATE_SOURCE_BASE,
     payload: payload
 });
 
 export const updateTargetBase = (payload) => ({
-    type: 'UPDATE_TARGET_BASE',
+    type: Actions.UPDATE_TARGET_BASE,
     payload: payload
 });
 
 export const updateDate = (payload) => ({
-    type: 'UPDATE_SELECTED_DATE',
+    type: Actions.UPDATE_SELECTED_DATE,
     payload: payload
 });
 
 export const getData = (payload) => ({
-    type: 'GET_DATA',
+    type: Actions.GET_DATA,
     payload: payload
 });
 
 export const recalculateTarget = () => ({
-    type: 'RECALCULATE_TARGET',
+    type: Actions.RECALCULATE_TARGET,
 });
 
 export const updateHistory = (payload) => ({
-    type: 'UPDATE_HISTORY',
+    type: Actions.UPDATE_HISTORY,
     payload: payload
 });
 
 export const clearHistory = () => ({
-    type: 'CLEAR_HISTORY',
+    type: Actions.CLEAR_HISTORY
 });

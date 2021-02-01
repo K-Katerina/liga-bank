@@ -1,7 +1,8 @@
-$color-indigo:               #2C36F2;
+$color-indigo: #2c36f2;
 $color-indigo--dark:         #2027B3;
 $color-indigo--darken:       #1F1E25;
-$color-indigo--light:        #F6F7FF;
+$color-indigo--light:        #3841FF;
+$color-indigo--lighten:      #F6F7FF;
 
 $color-red:                  #BE4A4A;
 $color-white:                #FFFFFF;
@@ -11,11 +12,12 @@ $color-grey--light:          #C1C2CA;
 
 $color-main:                 $color-indigo;
 $color-main--dark:           $color-indigo--dark;
+$color-main--light:          $color-indigo--light;
 
 $color-service:              $color-indigo--darken;
 $color-service--light:       $color-grey;
 $color-service--lighten:     $color-grey--light;
-$color-service--lightest:    $color-indigo--light;
+$color-service--lightest:    $color-indigo--lighten;
 
 $color-background:           $color-white;
 $color-error:                $color-red;
