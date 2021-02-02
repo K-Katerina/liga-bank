@@ -25,6 +25,11 @@
   }
 }
 
+.rate-date-picker .react-calendar {
+  border: 1px $color-service--light solid;
+  border-radius: 2px;
+}
+
 .rate-date-picker:hover .input__text,
 .rate-date-picker:focus .input__text {
   border-color: $color-main;
