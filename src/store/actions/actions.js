@@ -10,13 +10,13 @@ export const updateTargetInput = (payload) => ({
     payload: payload
 });
 
-export const updateSourceBase = (payload) => ({
-    type: Actions.UPDATE_SOURCE_BASE,
+export const updateSourceSymbol = (payload) => ({
+    type: Actions.UPDATE_SOURCE_SYMBOL,
     payload: payload
 });
 
-export const updateTargetBase = (payload) => ({
-    type: Actions.UPDATE_TARGET_BASE,
+export const updateTargetSymbol = (payload) => ({
+    type: Actions.UPDATE_TARGET_SYMBOL,
     payload: payload
 });
 

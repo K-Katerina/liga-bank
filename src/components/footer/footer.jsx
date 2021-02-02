@@ -2,7 +2,6 @@ import React from 'react';
 import {Menu} from '../menu/menu';
 import {Logo} from '../logo/logo';
 import {Social} from '../social/social';
-import './footer.scss';
 
 const Footer = () => {
     return (
@@ -13,7 +12,6 @@ const Footer = () => {
                     <p className="footer__desk">
                         150015, г.&nbsp;Москва, ул.&nbsp;Московская,&nbsp;д.&nbsp;32
                         Генеральная&nbsp;лицензия Банка&nbsp;России&nbsp;№1050
-                        <br/>
                         Ⓒ&nbsp;Лига&nbsp;Банк, 2021
                     </p>
                 </div>

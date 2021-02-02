@@ -6,8 +6,8 @@ const initialState = {
     selectedDate: moment().toDate(),
     sourceCurrency: INITIAL_SOURCE_CURRENCY,
     targetCurrency: 0,
-    sourceBase: Object.keys(CurrencySymbols)[0],
-    targetBase: Object.keys(CurrencySymbols)[1],
+    sourceSymbol: Object.keys(CurrencySymbols)[0],
+    targetSymbol: Object.keys(CurrencySymbols)[1],
     data: {},
     history: []
 };
@@ -18,25 +18,25 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 sourceCurrency: action.payload,
-                targetCurrency: getCurrency(state.data.rates, state.sourceBase, state.targetBase, action.payload)
+                targetCurrency: getCurrency(state.data.rates, state.sourceSymbol, state.targetSymbol, action.payload)
             };
         case Actions.UPDATE_TARGET_INPUT:
             return {
                 ...state,
                 targetCurrency: action.payload,
-                sourceCurrency: getCurrency(state.data.rates, state.targetBase, state.sourceBase, action.payload)
+                sourceCurrency: getCurrency(state.data.rates, state.targetSymbol, state.sourceSymbol, action.payload)
             };
-        case Actions.UPDATE_SOURCE_BASE:
+        case Actions.UPDATE_SOURCE_SYMBOL:
             return {
                 ...state,
-                sourceBase: action.payload,
-                targetCurrency: getCurrency(state.data.rates, action.payload, state.targetBase, state.sourceCurrency)
+                sourceSymbol: action.payload,
+                targetCurrency: getCurrency(state.data.rates, action.payload, state.targetSymbol, state.sourceCurrency)
             };
-        case Actions.UPDATE_TARGET_BASE:
+        case Actions.UPDATE_TARGET_SYMBOL:
             return {
                 ...state,
-                targetBase: action.payload,
-                targetCurrency: getCurrency(state.data.rates, state.sourceBase, action.payload, state.sourceCurrency)
+                targetSymbol: action.payload,
+                targetCurrency: getCurrency(state.data.rates, state.sourceSymbol, action.payload, state.sourceCurrency)
             };
         case Actions.UPDATE_SELECTED_DATE:
             return {
@@ -51,7 +51,7 @@ const reducer = (state = initialState, action) => {
         case Actions.RECALCULATE_TARGET:
             return {
                 ...state,
-                targetCurrency: getCurrency(state.data.rates, state.sourceBase, state.targetBase, state.sourceCurrency)
+                targetCurrency: getCurrency(state.data.rates, state.sourceSymbol, state.targetSymbol, state.sourceCurrency)
             };
         case Actions.UPDATE_HISTORY:
             return {

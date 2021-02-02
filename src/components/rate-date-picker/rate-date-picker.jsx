@@ -3,22 +3,21 @@ import moment from 'moment';
 import {PERIOD_IN_DAYS} from '../../const';
 import PropTypes from 'prop-types';
 import DatePicker from 'react-date-picker';
-import './date.scss';
 
-const Date = (props) => {
+const RateDatePicker = (props) => {
     return (
         <DatePicker {...props}
-                    className={`${props.className} date`}
+                    className={`${props.className} rate-date-picker`}
                     minDate={moment().subtract(PERIOD_IN_DAYS, 'd').toDate()}
                     maxDate={moment().toDate()}
         />
     );
 };
 
-Date.propTypes = {
-    value: PropTypes.object, // Date // moment
+RateDatePicker.propTypes = {
+    value: PropTypes.instanceOf(Date),
     onChange: PropTypes.func,
     className: PropTypes.string
 };
 
-export {Date};
+export {RateDatePicker};

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {Menu} from '../menu/menu';
 import {Logo} from '../logo/logo';
 import {SignIn} from '../sign-in/sign-in';
-import './main-nav.scss';
 
 const MainNav = ({className}) => {
     return (

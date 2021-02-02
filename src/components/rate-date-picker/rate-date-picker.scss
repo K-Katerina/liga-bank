@@ -1,6 +1,6 @@
 @import "../../scss/colors";
 
-.date {
+.rate-date-picker {
   display: inline-block;
   position: relative;
   font-size: 24px;
@@ -25,7 +25,7 @@
   }
 }
 
-.date:hover .input__text,
-.date:focus .input__text {
+.rate-date-picker:hover .input__text,
+.rate-date-picker:focus .input__text {
   border-color: $color-main;
 }

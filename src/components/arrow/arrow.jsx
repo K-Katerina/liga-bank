@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {ReactComponent as ArrowImg} from '../arrow/arrow.svg';
-import './arrow.scss';
 
 const Arrow = ({isRotate = false}) => {
     return (

@@ -3,48 +3,47 @@ import {Button} from '../button/button';
 import {Input} from '../input/input';
 import {Arrow} from '../arrow/arrow';
 import {Select} from '../select/select';
-import {Date} from '../date/date';
+import {RateDatePicker} from '../rate-date-picker/rate-date-picker';
 import {fetchData} from '../../store/api-actions';
 import {
     updateDate,
     updateHistory,
-    updateSourceBase,
+    updateSourceSymbol,
     updateSourceInput,
-    updateTargetBase,
+    updateTargetSymbol,
     updateTargetInput
 } from '../../store/actions/actions';
 import {useDispatch, useSelector} from 'react-redux';
 import {CurrencySymbols, DATE_FORMAT} from '../../const';
 import PropTypes from 'prop-types';
 import moment from 'moment';
-import './form.scss';
 
 const Form = ({className}) => {
     const dispatch = useDispatch();
     const sourceCurrency = useSelector(state => state.sourceCurrency);
     const targetCurrency = useSelector(state => state.targetCurrency);
     const selectedDate = useSelector(state => state.selectedDate);
-    const sourceBase = useSelector(state => state.sourceBase);
-    const targetBase = useSelector(state => state.targetBase);
+    const sourceSymbol = useSelector(state => state.sourceSymbol);
+    const targetSymbol = useSelector(state => state.targetSymbol);
 
     useEffect(() => {
         dispatch(fetchData(selectedDate));
     }, [selectedDate]);
 
     const onChangeSourceInput = (evt) => {
-        dispatch(updateSourceInput(evt.target.value));
+        dispatch(updateSourceInput(Number(evt.target.value)));
     };
 
     const onChangeTargetInput = (evt) => {
-        dispatch(updateTargetInput(evt.target.value));
+        dispatch(updateTargetInput(Number(evt.target.value)));
     };
 
-    const onChangeSourceBase = (evt) => {
-        dispatch(updateSourceBase(evt.target.value));
+    const onChangeSourceSymbol = (evt) => {
+        dispatch(updateSourceSymbol(evt.target.value));
     };
 
-    const onChangeTargetBase = (evt) => {
-        dispatch(updateTargetBase(evt.target.value));
+    const onChangeTargetSymbol = (evt) => {
+        dispatch(updateTargetSymbol(evt.target.value));
     };
 
     const onChangeDate = (value) => {
@@ -52,23 +51,25 @@ const Form = ({className}) => {
     };
 
     const onClickSaveButton = () => {
-        dispatch(updateHistory({
-            data: moment(selectedDate).format(DATE_FORMAT),
-            source: `${sourceCurrency} ${sourceBase}`,
-            target: `${targetCurrency} ${targetBase}`
-        }));
+        if (selectedDate && (sourceCurrency >= 0) && (targetCurrency >= 0)) {
+            dispatch(updateHistory({
+                date: moment(selectedDate).format(DATE_FORMAT),
+                source: `${sourceCurrency} ${sourceSymbol}`,
+                target: `${targetCurrency} ${targetSymbol}`
+            }));
+        }
     };
 
     return (
         <form className={`${className} form`}>
             <div className="form__left">
-                <Input className="form__source-input"
+                <Input className={`${sourceCurrency >= 0 || 'input--error'} form__source-input`}
                        onChange={(evt) => onChangeSourceInput(evt)}
                        value={sourceCurrency}
                        label={'У меня есть'}/>
                 <Select className="form__source-select"
-                        onChange={(evt) => onChangeSourceBase(evt)}
-                        value={sourceBase}
+                        onChange={(evt) => onChangeSourceSymbol(evt)}
+                        value={sourceSymbol}
                         options={Object.keys(CurrencySymbols)}/>
             </div>
             <div className="form__center">
@@ -76,21 +77,22 @@ const Form = ({className}) => {
                 <Arrow/>
             </div>
             <div className="form__right">
-                <Input className="form__target-input"
+                <Input className={`${sourceCurrency >= 0 || 'input--error'} form__target-input`}
                        onChange={(evt) => onChangeTargetInput(evt)}
                        value={targetCurrency}
                        label={'Хочу приобрести'}/>
                 <Select className="form__target-select"
-                        onChange={(evt) => onChangeTargetBase(evt)}
-                        value={targetBase}
+                        onChange={(evt) => onChangeTargetSymbol(evt)}
+                        value={targetSymbol}
                         options={Object.keys(CurrencySymbols)}/>
             </div>
-            <Date className="form__date"
-                  onChange={(value) => onChangeDate(value)}
-                  value={selectedDate}/>
+            <RateDatePicker className={`${selectedDate || 'rate-date-picker--error'} form__date`}
+                            onChange={(value) => onChangeDate(value)}
+                            value={selectedDate}/>
             <Button className="form__button-save"
                     onClick={() => onClickSaveButton()}
-                    nameButton={'Сохранить результат'}/>
+                    nameButton={'Сохранить результат'}
+                    disabled={!(selectedDate && (sourceCurrency >= 0) && (targetCurrency >= 0))}/>
         </form>
     );
 };

@@ -1,53 +1,19 @@
-@import "scss/colors";
 @import "scss/fonts";
-
-body {
-  min-width: 960px;
-  font-size: 18px;
-  line-height: 23px;
-  font-weight: 400;
-  color: $color-service;
-  background-color: $color-background;
-}
-
-main,
-article,
-section {
-  display: block;
-}
-
-*,
-*::before,
-*::after {
-  font-family: "Roboto", "Arial", sans-serif;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-}
-
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
-.wrapper {
-  width: 1366px;
-  position: relative;
-  padding: 0 98px;
-  margin: 0 auto;
-}
-
-.rotate180 {
-  transform: rotate(180deg);
-}
+@import "scss/colors";
+@import "scss/global";
+@import "./components/arrow/arrow";
+@import "./components/button/button";
+@import "./components/converter/converter";
+@import "./components/footer/footer";
+@import "./components/form/form";
+@import "./components/header/header";
+@import "./components/history/history";
+@import "./components/input/input";
+@import "./components/logo/logo";
+@import "./components/main-nav/main-nav";
+@import "./components/menu/menu";
+@import "./components/preview/preview";
+@import "./components/rate-date-picker/rate-date-picker";
+@import "./components/select/select";
+@import "./components/sign-in/sign-in";
+@import "./components/social/social";

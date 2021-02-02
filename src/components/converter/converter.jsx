@@ -1,7 +1,6 @@
 import React from 'react';
 import {Form} from '../form/form';
 import {History} from '../history/history';
-import './converter.scss';
 
 const Converter = () => {
     return (

@@ -1,7 +1,7 @@
 import {FRACTION_DIGITS, MAX_HISTORY_SIZE} from './const';
 
 export const getCurrency = (rates, s, t, currency) => {
-    return (1 / rates[s] * rates[t] * currency).toFixed(FRACTION_DIGITS);
+    return Number((1 / rates[s] * rates[t] * currency).toFixed(FRACTION_DIGITS));
 };
 
 export const putToHistory = (history, log) => {

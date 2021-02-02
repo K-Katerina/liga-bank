@@ -3,7 +3,6 @@ import {useDispatch, useSelector} from 'react-redux';
 import {Button} from '../button/button';
 import {clearHistory} from '../../store/actions/actions';
 import {Arrow} from '../arrow/arrow';
-import './history.scss';
 
 const History = () => {
     const dispatch = useDispatch();
@@ -20,7 +19,7 @@ const History = () => {
                 <ul className="history__list">
                     {history.map((log, i) =>
                         <li key={log + i} className="history__item">
-                            <span className="history__data">{log.data}</span>
+                            <span className="history__data">{log.date}</span>
                             <span className="history__source">{log.source}</span>
                             <Arrow/>
                             <span className="history__target">{log.target}</span>
@@ -34,7 +33,8 @@ const History = () => {
             }
             <Button className="history__button button--small"
                     onClick={() => onClickClearButton()}
-                    nameButton={'Очистить историю'}/>
+                    nameButton={'Очистить историю'}
+                    disabled={!(history && history.length)}/>
         </section>
     );
 };

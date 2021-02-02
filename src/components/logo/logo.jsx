@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {ReactComponent as LogoImg} from './logo.svg';
 import {ReactComponent as LogoImgText} from './logo-text.svg';
-import './logo.scss';
 
 const Logo = ({className}) => {
     return (
@@ -14,9 +13,7 @@ const Logo = ({className}) => {
 };
 
 Logo.propTypes = {
-    className: PropTypes.string,
-    wImg: PropTypes.string,
-    wTxt: PropTypes.string
+    className: PropTypes.string
 };
 
 export {Logo};

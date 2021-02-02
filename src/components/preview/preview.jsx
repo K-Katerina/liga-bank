@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import {HEIGHT_IMG_CARD, WIDTH_IMG_CARD} from '../../const';
 import whiteCard from './white-card.png';
 import blackCard from './black-card.png';
-import './preview.scss';
 
 const Preview = ({className}) => {
     return (

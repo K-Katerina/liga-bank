@@ -2,7 +2,7 @@
 
 .preview {
   background: $color-main;
-  background: $color-main linear-gradient(180.24deg, $color-main 36.31%, $color-main--dark 99.79%);
+  background: linear-gradient(180.24deg, $color-main 36.31%, $color-main--dark 99.79%);
   min-height: 400px;
   z-index: 10;
   position: relative;
@@ -103,7 +103,7 @@
     position: absolute;
     display: block;
     background: $color-main--light;
-    background: $color-main--light linear-gradient(183.47deg, $color-main 66.3%, $color-main--light 97.14%);
+    background: linear-gradient(183.47deg, $color-main 66.3%, $color-main--light 97.14%);
     width: 150px;
     height: 270px;
     right: 840px;
@@ -116,7 +116,7 @@
     position: absolute;
     display: block;
     background: $color-main--light;
-    background: $color-main--light linear-gradient(183.47deg, $color-main 66.3%, $color-main--light 97.14%);
+    background: linear-gradient(183.47deg, $color-main 66.3%, $color-main--light 97.14%);
     width: 270px;
     height: 270px;
     right: 80px;

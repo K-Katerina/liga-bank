@@ -30,4 +30,10 @@
   &:active {
     color: $color-service--light;
   }
+
+  &[disabled] {
+    background-color: $color-service--light;
+    color: $color-service--lighten;
+    cursor: not-allowed;
+  }
 }

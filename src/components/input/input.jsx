@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './input.scss';
 
 const Input = (props) => {
     return (
@@ -8,13 +7,15 @@ const Input = (props) => {
             <span className="input__label">
               {props.label}
             </span>
-            <input {...props} className="input__text" type="number"/>
+            <input {...props} className="input__text" type=""/>
         </label>
     );
 };
 
 Input.propTypes = {
     className: PropTypes.string,
+    onChange: PropTypes.func,
+    value: PropTypes.number,
     label: PropTypes.string
 };
 

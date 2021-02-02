@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './select.scss';
 
 const Select = ({options, onChange, value, className}) => {
     return (
