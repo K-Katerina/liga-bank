@@ -27,7 +27,9 @@ const Form = ({className}) => {
     const targetSymbol = useSelector(state => state.targetSymbol);
 
     useEffect(() => {
-        dispatch(fetchData(selectedDate));
+        if (selectedDate) {
+            dispatch(fetchData(selectedDate));
+        }
     }, [selectedDate]);
 
     const onChangeSourceInput = (evt) => {
@@ -51,13 +53,11 @@ const Form = ({className}) => {
     };
 
     const onClickSaveButton = () => {
-        if (selectedDate && (sourceCurrency >= 0) && (targetCurrency >= 0)) {
-            dispatch(updateHistory({
-                date: moment(selectedDate).format(DATE_FORMAT),
-                source: `${sourceCurrency} ${sourceSymbol}`,
-                target: `${targetCurrency} ${targetSymbol}`
-            }));
-        }
+        dispatch(updateHistory({
+            date: moment(selectedDate).format(DATE_FORMAT),
+            source: `${sourceCurrency} ${sourceSymbol}`,
+            target: `${targetCurrency} ${targetSymbol}`
+        }));
     };
 
     return (

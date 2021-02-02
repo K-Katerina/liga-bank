@@ -9,4 +9,7 @@ const apiClient = axios.create({
 export const getResultForBase = (selectedDate) =>
     apiClient
         .get(`${moment(selectedDate).format(HTML5_FMT.DATE)}?base=${BASE_SYMBOL}&symbols=${Object.keys(CurrencySymbols).toString()}`)
-        .then(({data}) => data);
+        .then(({data}) => data)
+        .catch((err) => {
+            throw err;
+        });
