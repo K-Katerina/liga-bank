@@ -7,7 +7,7 @@ const Input = (props) => {
             <span className="input__label">
               {props.label}
             </span>
-            <input {...props} className="input__text" type=""/>
+            <input {...props} className="input__text" type="number"/>
         </label>
     );
 };
